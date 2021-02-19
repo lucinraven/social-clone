@@ -1,0 +1,117 @@
+//notification_column has the same styling
+//INDEX PAGE STYLE
+.index_column, .notification_column {
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  @include size(auto, 85vw);
+  background-color: $secondary-bg-color;
+  @include jadflex(column, flex-start, center);
+  padding: 15px 0;
+  min-height: 90vh;
+
+  .createContainer {
+    width: 50%;
+    padding: 10px;
+    @include jadflex(row, center, center);
+    background-color: $main-bg-color;
+    border-radius: 10px;
+    figure {
+      @include size(60px, 60px);
+      border-radius: 50px;
+      overflow: hidden;
+      @include images();
+    }
+    p {
+      background-color: $secondary-bg-color;
+      border-radius: 10px;
+      color: $font-color;
+      margin-left: 10px;
+      padding: 10px;
+      width: 35vw;
+      cursor: text;
+    }
+  }
+  
+  .posts_area {
+    width: 50%;
+    @include jadflex(column, flex-start, center);
+    color: $font-color;
+    .status_post {
+      position: relative;
+      @include size(auto, 100%);
+      background-color: $main-bg-color;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 15px;
+      padding: 15px;
+      min-height: 60px;
+      cursor: pointer;
+
+      .post_profile_pic {
+        @include size(40px, 40px);
+        border-radius: 50px;
+        overflow: hidden;
+        @include images();
+      }
+
+      .posted_by {
+        @include size(50px, 85%);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        @include jadflex(row, space-between, center);
+
+        .post_header {
+          color: $sub-heading-color;
+          a {
+            width: auto;
+            padding: 0 5px;
+            color: $font-color;
+            text-decoration: none;
+          }
+        }
+        button {
+          padding: 0 10px;
+          background-color: transparent;
+          border: none;
+          color: $font-color;
+          font-size: 1.3rem;
+        }
+        button:hover {
+          color: red;
+        }
+      }
+
+      #post_body {
+        @include size(auto, 100%);
+        padding: 10px 0;
+        color: $font-color;
+      }
+      .newsfeedPostOptions {
+        color: $font-color;
+        height: 21px;
+        @include jadflex(row, flex-start, center);
+        iframe {
+          @include flex-center();
+          border: none;
+          height: 100%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .post_comment {
+      height: auto;
+      width: 100%;
+      iframe {
+        padding: 0 10px;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
+#loading{
+  width: 50%;
+  @include flex-center();
+}
