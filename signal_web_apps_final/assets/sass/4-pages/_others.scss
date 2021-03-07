@@ -1,0 +1,61 @@
+//SEARCH STYLE
+.search_column {
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  @include size(auto, 85vw);
+  background-color: $secondary-bg-color;
+  @include jadflex(column, flex-start, center);
+  padding: 15px 0;
+  min-height: 90vh;
+  color: $font-color;
+
+  .content {
+    width: 50%;
+    .search_result {
+      position: relative;
+      width: 100%;
+      .searchPageFriendButtons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        input {
+          border: none;
+          padding: 5px 15px;
+          border-radius: 10px;
+        }
+      }
+      .danger {
+        background-color: red;
+      }
+      .warning {
+        background-color: orange;
+      }
+      .default,
+      .success {
+        background-color: $primary;
+      }
+
+      .result_container {
+        width: 80%;
+        @include jadflex(row, flex-start, center);
+        .result_texts {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+//CLOSED USER STYLING
+.closed_column{
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  @include size(auto, 85vw);
+  background-color: $secondary-bg-color;
+  @include jadflex(column, flex-start, center);
+  padding: 15px 0;
+  min-height: 90vh;
+  color: $font-color;
+}

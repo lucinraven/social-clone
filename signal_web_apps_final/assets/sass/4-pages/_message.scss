@@ -1,0 +1,140 @@
+//MESSAGE STYLING
+.message_column {
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  @include size(auto, 85vw);
+  background-color: $secondary-bg-color;
+  @include jadflex(column, flex-start, center);
+  padding: 15px 0;
+  min-height: 90vh;
+  color: $font-color;
+
+  #conversations {
+    width: 65%;
+    @include jadflex(row, flex-start, center);
+    color: $font-color;
+    .loaded_conversations {
+      margin: 0 10px;
+      @include jadflex(row, flex-start, center);
+      a {
+        min-width: 100px;
+        height: 100%;
+        margin: 0 5px;
+        color: $font-color;
+        @include jadflex(column, space-between, center);
+        figure {
+          @include size(30px, 30px);
+          overflow: hidden;
+          margin-bottom: 5px;
+          border-radius: 50px;
+          @include images();
+        }
+      }
+    }
+  }
+  .message_wrapper {
+    position: relative;
+    width: 65%;
+    h4 {
+      color: $font-color;
+      a {
+        color: $primary;
+      }
+      a:hover {
+        text-decoration: none;
+        color: $primaryVariants;
+      }
+    }
+    #scroll_messages {
+      color: $font-color;
+      @include jadflex(column, space-between, center);
+
+      #green {
+        align-self: start;
+        background-color: $main-bg-color;
+        padding: 10px;
+        width: auto;
+        min-width: 30px;
+        border-radius: 10px;
+      }
+      #blue {
+        align-self: flex-end;
+        background-color: $primary;
+        padding: 10px;
+        min-width: 30px;
+        border-radius: 10px;
+      }
+    }
+    .message_post {
+      color: $font-color;
+      form {
+        @include jadflex(row, space-between, flex-end);
+        textarea {
+          width: 75%;
+          min-height: 5vh;
+          padding: 8px;
+          resize: none;
+          color: black;
+        }
+        textarea:focus {
+          outline: none;
+        }
+        input {
+          border: none;
+          width: 20%;
+          padding: 10px 10px;
+          background-color: $primary;
+          color: $font-color;
+          border-radius: 10px;
+        }
+        input:hover {
+          background-color: $primaryVariants;
+        }
+        input:focus {
+          outline: none;
+        }
+        .to_input,
+        .to_input:hover {
+          width: 40%;
+          background-color: $main-bg-color;
+          border-radius: none;
+          color: $font-color;
+        }
+      }
+      .results {
+        @include jadflex(column, space-between, center);
+        position: absolute;
+        right: 100px;
+        top: 110px;
+        width: 170px;
+        z-index: 4;
+        .resultDisplay {
+          width: 100%;
+          a {
+            width: 100%;
+            @include jadflex(row, center, center);
+            @include size(60px, 100%);
+            padding: 10px;
+            border-bottom: 1px $font-color solid;
+            figure {
+              @include size(50px, 50px);
+              overflow: hidden;
+              border-radius: 50px;
+              margin-right: 10px;
+              @include images();
+            }
+            .liveSearchText {
+              width: 65%;
+              color: $font-color;
+              font-size: 1.2rem;
+            }
+          }
+          a:hover {
+            background-color: rgba($color: black, $alpha: 0.3);
+          }
+        }
+      }
+    }
+  }
+}

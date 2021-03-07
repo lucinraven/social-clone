@@ -1,0 +1,78 @@
+.error-page{
+    height: 100vh;
+    width: 100vw;
+    background-color: $main-bg-color;
+}
+
+.error-wrapper{
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.error-main{
+    height: 100%;
+    width: 100%;
+    @include flex-center;
+    flex-direction: row;
+
+    .err-img-ctn{
+        height: 500px;
+        width: 50%;
+        display: block;
+        float: left;
+
+        img{
+            height: 100%;
+            width: 100%;
+            display: block;
+            float: left;
+        }
+    }
+
+ 
+    .err-message-ctn{
+        height: 500px;
+        width: 50%;
+        display: block;
+        float: right;
+        @include flex-center;
+
+        h1{
+            font-size: 40px;
+            font-family: $font-family;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $heading-color;
+        }
+
+        h2{
+            font-size: 120px;
+            font-family: $font-family;
+            color: $font-color;
+            font-size: 24px;
+        }
+    
+        button{
+            height: 50px;
+            width: 180px;
+            margin: 20px 0;
+            border-radius: 15px;
+            background: $primary;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        a{
+            font-family: $font-family;
+            font-size: 20px;
+            color: $font-color;
+            text-decoration: none;
+        }
+    
+        a:hover{
+            opacity: .8;
+        }
+    }
+}

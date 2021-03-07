@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: auto;
+  width: 100vw;
+  font-size: 16px;
+  font-family: $font-family;
+  overflow-x: hidden;
+  cursor: default;
+}

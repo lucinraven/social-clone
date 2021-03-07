@@ -1,0 +1,298 @@
+//PROFILE HEADER
+.profile_top {
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  @include jadflex(row, center, center);
+  @include size(50vh, 85vw);
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(50vh, 85vw);
+    z-index: -1;
+  }
+  .display_image{
+    @include size(100%, 18vw);
+    @include jadflex(column, flex-end, center);
+    background-color: transparent;
+    figure {
+      @include size(180px, 180px);
+      overflow: hidden;
+      @include images();
+    }
+  }
+  .profile_header {
+    @include size(100%, 67vw);
+    padding: 10px;
+    background-color: transparent;
+    @include jadflex(column, flex-end, flex-start);
+    color: $font-color;
+  }
+}
+
+//PROFILE PAGE STYLING
+.profile_main_column {
+  position: absolute;
+  top: 60vh;
+  left: 15vw;
+  @include size(auto, 85vw);
+  background-color: $secondary-bg-color;
+  @include jadflex(column, flex-start, flex-start);
+  padding: 15px 0;
+  min-height: 50vh;
+  .profile_row {
+    @include size(10vh, 100%);
+    @include jadflex(row, flex-start, center);
+    .friend {
+      @include jadflex(column, space-between, center);
+      height: 90%;
+      width: 18vw;
+      color: $font-color;
+      input {
+        padding: 5px 15px;
+        background-color: $primary;
+        border: none;
+      }
+      input:hover {
+        background-color: $primaryVariants;
+      }
+    }
+    .nav {
+      @include flex-center();
+      flex-direction: row;
+      width: 67vw;
+    }
+  }
+  
+  .content_row {
+    @include size(auto, 100%);
+    @include jadflex(row, flex-start, flex-start);
+    .introduction_div {
+      background-color: $main-bg-color;
+      margin: 5px 5px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      height: auto;
+      width: 17vw;
+      color: $primary;
+      h2 {
+        color: $font-color;
+        font-size: 2rem;
+      }
+      span {
+        padding: 5px;
+        span {
+          margin-left: 8px;
+        }
+        p {
+          color: $font-color;
+          font-size: 1.3rem;
+          padding: 5px;
+        }
+      }
+    }
+
+    //The content of the lower section
+    .tab-content {
+      @include flex-center();
+      width: 67vw;
+      padding: 20px 0;
+
+      //posts container
+      #newsfeed_div {
+        width: 65%;
+        color: $font-color;
+        .deep_blue {
+          width: 100%;
+          padding: 15px 10px;
+          background-color: $primary;
+          color: $font-color;
+          border: none;
+          border-radius: 10px;
+        }
+        .deep_blue:hover {
+          background-color: $primaryVariants;
+        }
+      }
+
+      //messages container
+      #messages_div {
+        width: 65%;
+        h4 {
+          color: $font-color;
+          a {
+            color: $primary;
+          }
+          a:hover {
+            text-decoration: none;
+            color: $primaryVariants;
+          }
+        }
+        .loaded_messages {
+          color: $font-color;
+          @include jadflex(column, space-between, center);
+
+          #green {
+            align-self: start;
+            background-color: $main-bg-color;
+            padding: 10px;
+            width: auto;
+            min-width: 30px;
+            border-radius: 10px;
+          }
+          #blue {
+            align-self: flex-end;
+            background-color: $primary;
+            padding: 10px;
+            min-width: 30px;
+            border-radius: 10px;
+          }
+        }
+        .message_post {
+          form {
+            @include jadflex(row, space-between, flex-end);
+            textarea {
+              width: 75%;
+              min-height: 5vh;
+              padding: 8px;
+              resize: none;
+            }
+            textarea:focus {
+              outline: none;
+            }
+            input {
+              border: none;
+              width: 20%;
+              padding: 10px 10px;
+              background-color: $primary;
+              color: $font-color;
+              border-radius: 10px;
+            }
+            input:hover {
+              background-color: $primaryVariants;
+            }
+            input:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+
+      //friends container
+      #friends_div {
+        width: 65%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-template-rows: auto;
+        column-gap: 20px;
+        row-gap: 20px;
+        .friend_container {
+          width: 100%;
+          height: 8vh;
+          @include jadflex(row, space-between, center);
+          figure {
+            height: 100%;
+            width: 55px;
+            border-radius: 50px;
+            overflow: hidden;
+            img {
+              @include size100P();
+              object-fit: cover;
+            }
+          }
+          .header_container {
+            @include jadflex(column, space-between, flex-start);
+            width: 70%;
+            height: 100%;
+            a {
+              color: $primary;
+            }
+            a:hover {
+              color: $primaryVariants;
+            }
+            p {
+              color: $font-color;
+            }
+          }
+        }
+      }
+
+      //styling of the posts_area
+      .posts_area {
+        .status_post {
+          position: relative;
+          @include size(auto, 45vw);
+          background-color: $main-bg-color;
+          border-radius: 10px;
+          margin: 20px 0;
+          font-size: 15px;
+          padding: 10px;
+          min-height: 60px;
+          cursor: pointer;
+          .post_profile_pic {
+            @include size(50px, 50px);
+            border-radius: 50px;
+            overflow: hidden;
+            @include images();
+          }
+          .posted_by {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 50px;
+            width: 85%;
+            @include jadflex(row, space-between, center);
+
+            .post_header {
+              color: $sub-heading-color;
+              a {
+                width: auto;
+                padding: 0 5px;
+                color: $font-color;
+                text-decoration: none;
+              }
+            }
+            button {
+              padding: 0 10px;
+              background-color: transparent;
+              border: none;
+              color: $font-color;
+              font-size: 1.3rem;
+              z-index: 3;
+            }
+            button:hover {
+              color: red;
+            }
+          }
+
+          #post_body {
+            @include size(auto, 100%);
+            padding: 10px 0;
+            color: $font-color;
+          }
+          .newsfeedPostOptions {
+            color: $font-color;
+            height: 21px;
+            @include jadflex(row, flex-start, center);
+            iframe {
+              @include flex-center();
+              border: none;
+              height: 100%;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .post_comment {
+          height: auto;
+          width: 100%;
+          iframe {
+            padding: 0 10px;
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
